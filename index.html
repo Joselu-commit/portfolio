@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -232,24 +233,34 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
   }
-  .project-slot{
-    border: 1.5px dashed var(--border);
+  .project-card{
+    border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 30px 22px;
-    min-height: 180px;
+    overflow: hidden;
     display:flex;
     flex-direction:column;
-    justify-content: space-between;
+    background: var(--surface);
+    transition: border-color .15s, transform .15s;
   }
-  .project-slot .num{ font-family:'Space Grotesk',sans-serif; color: var(--muted-dim); font-size:0.85rem; }
-  .project-slot .label{ margin-top: auto; padding-top: 24px; color: var(--muted); font-size: 0.92rem; }
-  .empty-note{
-    margin-top: 28px;
-    color: var(--muted);
-    font-size: 0.95rem;
-    max-width: 60ch;
+  .project-card:hover{ border-color: var(--indigo-soft); transform: translateY(-2px); }
+  .project-thumb{
+    height: 150px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.92);
   }
-  .empty-note a{ color: var(--mint); border-bottom: 1px solid rgba(0,224,166,0.35); }
+  .thumb-cafe{ background: linear-gradient(135deg, #3d2c22, #5a3d29); }
+  .thumb-gym{ background: linear-gradient(135deg, #16171a, #2a2c1f); }
+  .thumb-clinic{ background: linear-gradient(135deg, #12312c, #1f6f66); }
+  .project-body{ padding: 20px 22px 22px; display:flex; flex-direction:column; gap: 6px; flex:1; }
+  .project-body .kicker{ font-size:0.78rem; color: var(--mint); }
+  .project-body h3{ font-family:'Space Grotesk',sans-serif; font-size:1.05rem; font-weight:600; }
+  .project-body p{ color: var(--muted); font-size:0.88rem; margin-top:2px; }
+  .project-body .visit{ margin-top: auto; padding-top: 14px; font-size:0.85rem; color: var(--indigo-soft); }
   @media (max-width: 760px){
     .projects-grid{ grid-template-columns: 1fr; }
   }
@@ -436,23 +447,38 @@
     <div class="wrap">
       <div class="section-head">
         <h2>Proyectos</h2>
-        <p>Estoy construyendo esta sección ahora mismo, con proyectos reales en lugar de ejercicios de clase.</p>
+        <p>Landing pages de muestra construidas desde cero, cada una con una identidad visual distinta según el negocio.</p>
       </div>
       <div class="projects-grid">
-        <div class="project-slot">
-          <span class="num">01</span>
-          <span class="label">Próximamente</span>
-        </div>
-        <div class="project-slot">
-          <span class="num">02</span>
-          <span class="label">Próximamente</span>
-        </div>
-        <div class="project-slot">
-          <span class="num">03</span>
-          <span class="label">Próximamente</span>
-        </div>
+        <a class="project-card" href="demo-cafeteria.html" target="_blank" rel="noopener">
+          <div class="project-thumb thumb-cafe">Café Origen</div>
+          <div class="project-body">
+            <span class="kicker">Cafetería · HTML/CSS</span>
+            <h3>Landing de cafetería de especialidad</h3>
+            <p>Estética editorial cálida, menú destacado y testimonios.</p>
+            <span class="visit">Ver la web ↗</span>
+          </div>
+        </a>
+        <a class="project-card" href="demo-gimnasio.html" target="_blank" rel="noopener">
+          <div class="project-thumb thumb-gym">FORJA</div>
+          <div class="project-body">
+            <span class="kicker">Entrenador personal · HTML/CSS</span>
+            <h3>Landing de entrenamiento personal</h3>
+            <p>Estética energética con planes de precios y resultados.</p>
+            <span class="visit">Ver la web ↗</span>
+          </div>
+        </a>
+        <a class="project-card" href="demo-clinica.html" target="_blank" rel="noopener">
+          <div class="project-thumb thumb-clinic">Clínica Marés</div>
+          <div class="project-body">
+            <span class="kicker">Clínica dental · HTML/CSS</span>
+            <h3>Landing de servicios profesionales</h3>
+            <p>Estética clara y de confianza, con foco en credibilidad.</p>
+            <span class="visit">Ver la web ↗</span>
+          </div>
+        </a>
       </div>
-      <p class="empty-note">Mientras subo aquí los primeros casos, puedes ver mis servicios ya activos en <a href="https://es.fiverr.com/joselu2407/automatizar-tu-negocio-con-ia-leads-whatsapp-y-atencion-al-cliente" target="_blank" rel="noopener">Fiverr</a> y <a href="https://malt.es/profile/joseluisvegaortega1" target="_blank" rel="noopener">Malt</a>.</p>
+      <p class="empty-note">Estos son proyectos de muestra para enseñar mi estilo — si buscas algo similar para tu negocio, hablamos en la sección de <a href="#contacto">contacto</a>.</p>
     </div>
   </section>
 
